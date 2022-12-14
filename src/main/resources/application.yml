@@ -1,0 +1,60 @@
+logging:
+  level:
+    org:
+    springframework: debug
+    objectweb: debug
+
+    root: info
+    com.adnstyle.hosb: debug
+
+---
+# to-be
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hosb_test_sungjun
+    username: root
+    password: tjdwns92
+
+
+
+  #    url: jdbc:mariadb://192.168.1.84:3306/hosb_db
+#    username: hosb_user
+#    password: Ghtmqdbwt12!#
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        hbm2ddl:
+          auto: create
+server:
+  port: 8888
+  error:
+    whitelabel:
+      enabled: false
+
+---
+
+# as-is
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url:
+    username:
+    password:
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8889
+  error:
+    whitelabel:
+      enabled: false
